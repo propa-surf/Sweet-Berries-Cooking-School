@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Registration</title>
+  <link href="registration.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div class="grid-container">
+
+    <header>
+      <img src="/index/assets/logo.png" alt="sweet berries cooking school logo">
+      <div id="burger-container">
+        <label for="burger" class="burger">&#9776;</label>
+        <input id="burger" type="checkbox">
+        <div class="nav-bar">
+         <a href="#">Courses</a>
+         <a href="#">About us</a>
+         <a href="#" id="get-started">Get Started</a>
+        </div>
+     </div>
+    </header>  
+
+    <form class="form-grid">
+
+      <h2>Registration</h2>
+
+      <div class="first-name">
+        <label for="first-name-input" class="first-name-input">Name*</label>
+        <input type="text" id="first-name-input" placeholder="John" required>
+        <span></span>
+      </div>
+
+      <div class="surname">
+        <label for="surname-input" class="surname-input">Surname*</label>
+        <input type="text" id="surname-input" placeholder="Doe" required>
+        <span></span>
+      </div>
+
+      <div class="email">
+        <label for="email-input" class="email-input">Email*</label>
+        <input type="email" id="email-input" placeholder="example@mail.com" required>
+        <span></span>
+      </div>
+
+      <div class="password">
+        <label for="password-input" class="password-input">Password*</label>
+        <input type="password" id="password-input" placeholder="****" required>
+        <span></span>
+      </div>
+
+      <div class="courses">
+        <label for="selected-course" class="selected-course">Select course*</label>
+        <select name="selected-course" id="selected-course" required>
+          <option value="choose" selected disabled>Choose</option>
+          <option value="essentials">Cooking Essentials</option>
+          <option value="chef">Chef Skills</option>
+          <option value="nutrition">Nutrition in Cooking</option>      
+          <option value="plant">Plant-Based Cooking</option>
+          <option value="teen">Teen's Kitchen</option>
+        </select>
+        <span></span>
+      </div>
+
+      <div class="notes-text">
+        <label for="notes" class="notes">Notes (optional)</label>
+        <textarea id="notes" name="notes" rows="6" cols="36"></textarea>
+      </div>
+
+      <div class="reset">
+        <button type="reset" id="reset" value="reset">Reset</button>
+      </div>
+
+      <div class="submit">
+        <button type="submit" id="submit" value="submit">Submit</button>
+      </div>
+
+    </form>
+
+    <footer>
+      <p>Sweet Berries</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

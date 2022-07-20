@@ -1,0 +1,205 @@
+:root{
+  --primary-color: #FF4C4C;
+  --secondary-color: #A94E97;
+  --white: #ffffff;
+  --grey: #83869A;
+  --text-black: #000000;
+  --text-grey: #83869A;
+  --text-white: #ffffff;
+  --text-links: #FF4C4C;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-links);
+}
+
+/*Mobile First*/
+
+.grid-container{
+  display: grid;
+  grid-template: auto / 100%;
+  grid-template-areas: 
+  "header"
+  "form"
+  "footer";
+}
+
+header{
+  grid-area: header;
+  padding-bottom: 50px;
+  display:flex;
+  justify-content: space-between;
+}
+
+header img{
+  width: 25%;
+}
+
+.burger{
+  display: block;
+  /*Burger inclusive drop down adaptive with this style of coding it?*/
+}
+
+#burger{
+  display: none;
+}
+
+.nav-bar{
+  display: none;
+}
+
+.burger{
+  color: var(--primary-color);
+  font-size: 48px;
+  position: relative;
+  top: 16px;
+  right: 38.62px;
+}
+
+#burger:checked + .nav-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 66px;
+  right: 18px;
+}
+
+.nav-bar a{
+  font-size: 16px;
+  padding: 2px;
+}
+
+.form-grid{
+  grid-area: form;
+  padding: 0px 40px;
+  display: grid;
+  justify-items: center;
+  grid-template: auto / 50% 50%;
+  grid-gap: 40px 0px;
+  grid-template-areas:
+  "registration-header registration-header"
+  "first-name surname"
+  "email password"
+  "courses ."
+  "notes notes"
+  "reset submit";
+}
+
+h2{
+  grid-area: registration-header;
+  margin-bottom: 40px;
+}
+
+.first-name, .surname, .email, .password, .courses{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.first-name{
+  grid-area: first-name;
+}
+
+.surname{
+  grid-area: surname;
+}
+
+.email{
+  grid-area: email;
+}
+
+.password{
+  grid-area: password;
+}
+
+.courses{
+  grid-area: courses;
+}
+
+.form-grid input, select{
+  border: solid 1px var(--text-black);
+  border-radius: 4px;
+  padding: 8px 0px 8px 8px;
+  margin-top: 4px;
+}
+
+.form-grid input + span{
+  position: relative;
+}
+
+.form-grid input + span::after{
+  position: absolute;
+  top: 5px;
+}
+
+.form-grid input:invalid + span::after{
+  content: 'this field is required';
+  color: red;
+  font-size: 8px;
+}
+
+.form-grid input:valid + span::after{
+  content: '';
+}
+
+.notes-text{
+  grid-area: notes;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+textarea{
+  border-radius: 4px;
+  background-color: var(--primary);
+  resize: none;
+}
+
+textarea:focus {
+  outline: 1px solid var(--secondary);
+}
+
+.reset{
+  grid-area: reset;
+}
+
+.submit{
+  grid-area: submit;
+}
+
+button{
+  font-size: 16px;
+  background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+  border: none;
+  width: 120px;
+  height: 40px;
+  border-radius: 16px;
+  color: var(--text-white);
+}
+
+footer{
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+  background-color: var(--primary-color);
+  color: var(--text-white); 
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 92px;
+}
