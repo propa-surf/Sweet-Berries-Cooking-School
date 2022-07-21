@@ -256,6 +256,10 @@ header img{
   margin-right: 15px;
 }
 
+.nav-bar a:nth-child(2){
+  margin-right: 15px;
+}
+
 #get-started{
   background-image: linear-gradient(var(--primary-color), var(--secondary-color));
   padding: 15px 25px;

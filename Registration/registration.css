@@ -156,6 +156,25 @@ h2{
   content: '';
 }
 
+.form-grid select + span{
+  position: relative;
+}
+
+.form-grid select + span::after{
+  position: absolute;
+  top: 5px;
+}
+
+.form-grid select:invalid + span::after{
+  content: 'this field is required';
+  color: red;
+  font-size: 8px;
+}
+
+.form-grid select:valid + span::after{
+  content: '';
+}
+
 .notes-text{
   grid-area: notes;
   display: flex;
@@ -202,4 +221,75 @@ footer{
   font-size: 28px;
   font-weight: 700;
   margin-top: 92px;
+}
+
+/*Media Query Tablet*/
+
+@media (min-width: 725px){
+  header img{
+    width: 200px;
+    height:200px;
+  }
+    
+  .burger{
+    display: none;
+  }
+  
+  #burger{
+    display: none;
+  }
+    
+  .nav-bar{
+    height:100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-bar a{
+    font-size: 20px;
+  }
+  
+  .nav-bar a:nth-child(1){
+    margin-right: 15px;
+  }
+
+  .nav-bar a:nth-child(2){
+    margin-right: 15px;
+  }
+  
+  #get-started{
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+    padding: 15px 25px;
+    margin: 0 40px 0 20px;
+    border-radius: 28px;
+    color: var(--text-white);
+  }
+
+  .form-grid{
+    grid-gap: 60px 0px;
+  }
+
+  h2{
+    grid-area: registration-header;
+    margin-bottom: 20px;
+  }
+
+  button{
+    width: 160px;
+  }
+
+}
+
+/* Media Query Desktop*/
+
+@media (min-width: 1100px){
+
+  .grid-container{
+    grid-template: auto / 10% 40% 40% 10%;
+    grid-template-areas: 
+    "header header header header"
+    ". form form ."
+    "footer footer footer footer";
+  }
+
 }
